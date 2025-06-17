@@ -1,0 +1,22 @@
+{
+  "name": "my-text-editor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "web1": "npm --prefix ./prototype-text-editor run dev",
+    "web2": "npm --prefix ./scratch run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jakkarin-Promsee/MyCanva.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jakkarin-Promsee/MyCanva/issues"
+  },
+  "homepage": "https://github.com/Jakkarin-Promsee/MyCanva#readme",
+  "description": ""
+}

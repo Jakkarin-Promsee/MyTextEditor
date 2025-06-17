@@ -1,5 +1,5 @@
-import React from 'react';
-import type { FontSizeOption } from './types';
+import React from "react";
+import type { FontSizeOption } from "./types";
 
 interface Props {
   currentSize: string;
@@ -8,15 +8,15 @@ interface Props {
 
 const FontSizeSelector: React.FC<Props> = ({ currentSize, onSizeChange }) => {
   const fontSizes: FontSizeOption[] = [
-    { label: 'Normal', value: 'normal', class: 'text-base' },
-    { label: 'Medium', value: 'medium', class: 'text-lg' },
-    { label: 'Large', value: 'large', class: 'text-xl' },
+    { label: "Normal", value: "normal", class: "text-base" },
+    { label: "Medium", value: "medium", class: "text-lg" },
+    { label: "Large", value: "large", class: "text-xl" },
   ];
 
   return (
     <select
       value={currentSize}
-      onChange={e => onSizeChange(e.target.value)}
+      onChange={(e) => onSizeChange(e.target.value)}
       className="
         px-3 py-2 pr-8 bg-white border border-gray-200 rounded-lg
         text-sm font-medium text-gray-700 cursor-pointer
@@ -24,7 +24,7 @@ const FontSizeSelector: React.FC<Props> = ({ currentSize, onSizeChange }) => {
         hover:border-gray-300 transition-colors duration-200
       "
     >
-      {fontSizes.map(fs => (
+      {fontSizes.map((fs) => (
         <option key={fs.value} value={fs.value}>
           {fs.label}
         </option>

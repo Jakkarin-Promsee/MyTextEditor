@@ -1,6 +1,7 @@
 import "./App.css";
 import { ThemeProvider } from "./context/ThemeContext";
 import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
             Hello World
           </div>
         </div>
+        <Footer></Footer>
       </ThemeProvider>
     </>
   );

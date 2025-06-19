@@ -8,9 +8,9 @@ export const Navbar = () => {
           Medium Editor
         </h1>
         <ul className="flex gap-6">
-          <li className="hover:underline cursor-pointer">Home</li>
-          <li className="hover:underline cursor-pointer">About</li>
-          <li className="hover:underline cursor-pointer">Contact</li>
+          <li className="hover:underline cursor-pointer muted-text">Home</li>
+          <li className="hover:underline cursor-pointer muted">About</li>
+          <li className="hover:underline cursor-pointer muted">Contact</li>
         </ul>
         <ThemeToggle></ThemeToggle>
       </div>

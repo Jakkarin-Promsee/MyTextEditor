@@ -8,7 +8,7 @@ function App() {
     <>
       <ThemeProvider>
         <Navbar></Navbar>
-        <h1>Hello world</h1>
+        <h1 className="text-shadow-2xs text-shadow-amber-700">Hello world</h1>
         <Footer></Footer>
       </ThemeProvider>
     </>

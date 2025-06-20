@@ -7,11 +7,13 @@ export const Navbar = () => {
         <h1 className="text-xl font-bold text-primary-light dark:text-primary-dark">
           Medium Editor
         </h1>
+
         <ul className="flex gap-6">
           <li className="hover:underline cursor-pointer muted-text">Home</li>
           <li className="hover:underline cursor-pointer muted">About</li>
           <li className="hover:underline cursor-pointer muted">Contact</li>
         </ul>
+
         <ThemeToggle></ThemeToggle>
       </div>
     </nav>

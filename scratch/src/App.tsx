@@ -8,7 +8,8 @@ function App() {
     <>
       <ThemeProvider>
         <Navbar></Navbar>
-        <h1 className="text-shadow-2xs text-shadow-amber-700">Hello world</h1>
+        <h1>Hello world</h1>
+        <div className="animate-fade-in">Fade in animation</div>
         <Footer></Footer>
       </ThemeProvider>
     </>

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { ThemeProvider } from "./context/ThemeContext";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
-import Toolbar from "./components/Toolbar/Toolbar";
+import TextEditor from "./components/TextEditor";
 
 function App() {
   return (
@@ -12,8 +12,9 @@ function App() {
         <Navbar></Navbar>
         <div className="h-52 min-h-screen px-6 py-4">
           <h1>Hello world</h1>
-          <Toolbar></Toolbar>
+          <TextEditor></TextEditor>
         </div>
+
         <Footer></Footer>
       </ThemeProvider>
     </>

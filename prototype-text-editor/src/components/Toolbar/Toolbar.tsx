@@ -16,7 +16,7 @@ interface Props {
   activeFormats: { bold: boolean; italic: boolean; underline: boolean };
   fontSize: string;
   textAlign: string;
-  onFormat: (string) => void;
+  onFormat: (format: string) => void;
   onSizeChange: (size: string) => void;
   onTextAlign: (align: string) => void;
   onImageClick: () => void;

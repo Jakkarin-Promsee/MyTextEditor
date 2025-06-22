@@ -6,6 +6,7 @@ import { Footer } from "./components/Footer";
 import TextEditor from "./components/TextEditor";
 
 function App() {
+  //   const renderCount = useRef(0);
   return (
     <>
       <ThemeProvider>

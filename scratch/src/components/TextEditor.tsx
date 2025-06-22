@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import Toolbar from "./Toolbar/Toolbar";
+import SlateEditor from "./SlateEditor";
 
 type Props = {};
 
@@ -36,6 +37,7 @@ const TextEditor: React.FC<Props> = ({}) => {
         onTextFormatChange={applyTextFormat}
         onTextAlignChange={setTextAlign}
       ></Toolbar>
+      <SlateEditor></SlateEditor>
     </>
   );
 };

@@ -1,6 +1,8 @@
 import React, { useMemo } from "react";
 import { createEditor } from "slate";
+import type { BaseText } from "slate";
 import { Editable, Slate, withReact } from "slate-react";
+import Toolbar from "./Toolbar/Toolbar";
 
 type Props = {};
 
@@ -11,6 +13,12 @@ const initialValue = [
   },
 ];
 
+type CustomText = BaseText & {
+  bold?: boolean;
+  italic?: boolean;
+  underline?: boolean;
+};
+
 const SlateEditor = () => {
   const editor = useMemo(() => withReact(createEditor()), []);
 
@@ -20,7 +28,17 @@ const SlateEditor = () => {
       initialValue={initialValue}
       onChange={(value) => console.log(value)}
     >
-      <Editable className="border p-4 min-h-[200px] rounded shadow" />
+      <Toolbar />
+      <Editable
+        renderLeaf={({ attributes, children, leaf }) => {
+          const customLeaf = leaf as CustomText;
+          if (customLeaf.bold) children = <strong>{children}</strong>;
+          if (customLeaf.italic) children = <em>{children}</em>;
+          if (customLeaf.underline) children = <u>{children}</u>;
+          return <span {...attributes}>{children}</span>;
+        }}
+        className="border p-4 min-h-[200px] rounded"
+      />
     </Slate>
   );
 };

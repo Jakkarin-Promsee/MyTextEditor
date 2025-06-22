@@ -1,44 +1,45 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useMemo } from "react";
+import { createEditor } from "slate";
+import type { BaseText } from "slate";
+import { Editable, Slate, withReact } from "slate-react";
 import Toolbar from "./Toolbar/Toolbar";
-import SlateEditor from "./SlateEditor";
 
 type Props = {};
 
-const TextEditor: React.FC<Props> = ({}) => {
-  const [fontSize, setFontSize] = useState("normal");
-  const [textAlign, setTextAlign] = useState("left");
-  const [textFormat, setTextFormat] = useState({
-    bold: false,
-    italic: false,
-    underline: false,
-  });
+const initialValue = [
+  {
+    type: "paragraph",
+    children: [{ text: "Start typing here..." }],
+  },
+];
 
-  useEffect(() => {
-    console.log("Some changes detected");
-  }, [fontSize, textAlign, textFormat]);
+type CustomText = BaseText & {
+  bold?: boolean;
+  italic?: boolean;
+  underline?: boolean;
+};
 
-  const applyTextFormat = useCallback((format: string) => {
-    if (format === "bold") {
-      setTextFormat((prev) => ({ ...prev, bold: !prev.bold }));
-    } else if (format === "italic") {
-      setTextFormat((prev) => ({ ...prev, italic: !prev.italic }));
-    } else if (format === "underline") {
-      setTextFormat((prev) => ({ ...prev, underline: !prev.underline }));
-    }
-  }, []);
+const TextEditor = () => {
+  const editor = useMemo(() => withReact(createEditor()), []);
 
   return (
-    <>
-      <Toolbar
-        fontSize={fontSize}
-        textFormats={textFormat}
-        textAlign={textAlign}
-        onSizeChange={setFontSize}
-        onTextFormatChange={applyTextFormat}
-        onTextAlignChange={setTextAlign}
-      ></Toolbar>
-      <SlateEditor></SlateEditor>
-    </>
+    <Slate
+      editor={editor}
+      initialValue={initialValue}
+      onChange={(value) => console.log(value)}
+    >
+      <Toolbar />
+      <Editable
+        renderLeaf={({ attributes, children, leaf }) => {
+          const customLeaf = leaf as CustomText;
+          if (customLeaf.bold) children = <strong>{children}</strong>;
+          if (customLeaf.italic) children = <em>{children}</em>;
+          if (customLeaf.underline) children = <u>{children}</u>;
+          return <span {...attributes}>{children}</span>;
+        }}
+        className="border p-4 min-h-[200px] rounded"
+      />
+    </Slate>
   );
 };
 

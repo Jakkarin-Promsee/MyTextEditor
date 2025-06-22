@@ -25,6 +25,7 @@ const TextEditor: React.FC = () => {
   }, []);
 
   const updateFormats = useCallback(() => {
+    console.log("I see you, LOL");
     setFormats({
       bold: document.queryCommandState("bold"),
       italic: document.queryCommandState("italic"),
@@ -78,6 +79,7 @@ const TextEditor: React.FC = () => {
       : "text-left";
 
   useEffect(() => {
+    console.log("Content updated:", content);
     document.addEventListener("selectionchange", handleSelect);
     return () => document.removeEventListener("selectionchange", handleSelect);
   }, [handleSelect]);
@@ -114,7 +116,7 @@ const TextEditor: React.FC = () => {
           <div
             ref={editorRef}
             contentEditable
-            onInput={handleInput}
+            // onInput={handleInput}
             className={`
               min-h-96 p-4 border rounded-lg bg-white focus:ring-2 focus:ring-blue-500
               ${getFontClass()} ${getAlignClass()} leading-relaxed text-gray-800

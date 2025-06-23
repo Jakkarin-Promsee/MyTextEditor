@@ -30,110 +30,70 @@ const Toolbar = () => {
 
   return (
     <>
-      {/* For Text Format */}
-      <div className="flex items-center justify-start gap-2">
-        <SlateButton
-          onToggle={toggleMark}
-          checkActive={isMarkActive}
-          format="bold"
-          tooltip="Bold"
-        >
-          <b>B</b>
-        </SlateButton>
-        <SlateButton
-          onToggle={toggleMark}
-          checkActive={isMarkActive}
-          format="italic"
-          tooltip="Italic"
-        >
-          <i>I</i>
-        </SlateButton>
-        <SlateButton
-          onToggle={toggleMark}
-          checkActive={isMarkActive}
-          format="underline"
-          tooltip="Underline"
-        >
-          <u>U</u>
-        </SlateButton>
-      </div>
+      <div className="flex items-center justify-start gap-4">
+        {/* For Text Format */}
+        <div className="flex items-center justify-start gap-2">
+          <SlateButton
+            onToggle={toggleMark}
+            checkActive={isMarkActive}
+            format="bold"
+            tooltip="Bold"
+          >
+            <b>B</b>
+          </SlateButton>
+          <SlateButton
+            onToggle={toggleMark}
+            checkActive={isMarkActive}
+            format="italic"
+            tooltip="Italic"
+          >
+            <i>I</i>
+          </SlateButton>
+          <SlateButton
+            onToggle={toggleMark}
+            checkActive={isMarkActive}
+            format="underline"
+            tooltip="Underline"
+          >
+            <u>U</u>
+          </SlateButton>
+        </div>
 
-      <div className="flex items-center justify-start gap-2">
-        <SlateButton
-          onToggle={toggleAlign}
-          checkActive={isAlign}
-          format="left"
-          tooltip="Align Left"
-        >
-          <p>Left</p>
-        </SlateButton>
+        {/*  */}
+        <div>||</div>
 
-        <SlateButton
-          onToggle={toggleAlign}
-          checkActive={isAlign}
-          format="center"
-          tooltip="Align Center"
-        >
-          <p>Center</p>
-        </SlateButton>
+        {/* For Text Align */}
+        <div className="flex items-center justify-start gap-2">
+          <SlateButton
+            onToggle={toggleAlign}
+            checkActive={isAlign}
+            format="left"
+            tooltip="Align Left"
+          >
+            <p>Left</p>
+          </SlateButton>
 
-        <SlateButton
-          onToggle={toggleAlign}
-          checkActive={isAlign}
-          format="right"
-          tooltip="Align Right"
-        >
-          <p>Right</p>
-        </SlateButton>
+          <SlateButton
+            onToggle={toggleAlign}
+            checkActive={isAlign}
+            format="center"
+            tooltip="Align Center"
+          >
+            <p>Center</p>
+          </SlateButton>
 
-        <SlateButton
-          onToggle={toggleAlign}
-          checkActive={isAlign}
-          format="justify"
-          tooltip="Align Justify"
-        >
-          <p>Justify</p>
-        </SlateButton>
+          <SlateButton
+            onToggle={toggleAlign}
+            checkActive={isAlign}
+            format="right"
+            tooltip="Align Right"
+          >
+            <p>Right</p>
+          </SlateButton>
+        </div>
       </div>
     </>
   );
 };
-
-const oldToolbar = ({
-  fontSize,
-  textFormats,
-  textAlign,
-  onSizeChange,
-  onTextFormatChange,
-  onTextAlignChange,
-}: Props) => (
-  <>
-    <div className="flex items-center justify-start gap-2">
-      <ToolbarButton
-        onClick={() => onTextAlignChange("left")}
-        isActive={textAlign === "left"}
-        tooltip="Align Left"
-      >
-        <p>Left</p>
-      </ToolbarButton>
-
-      <ToolbarButton
-        onClick={() => onTextAlignChange("center")}
-        isActive={textAlign === "center"}
-        tooltip="Align center"
-      >
-        <p>Center</p>
-      </ToolbarButton>
-
-      <ToolbarButton
-        onClick={() => onTextAlignChange("right")}
-        isActive={textAlign === "right"}
-        tooltip="Align right"
-      >
-        <p>Right</p>
-      </ToolbarButton>
-    </div>
-  </>
-);
 
 export default Toolbar;

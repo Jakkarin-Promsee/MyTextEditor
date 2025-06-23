@@ -15,17 +15,19 @@ import Toolbar from "./Toolbar/Toolbar";
 type Props = {};
 
 type CustomText = BaseText & {
-  text?: string;
+  text: string;
   bold?: boolean;
   italic?: boolean;
   underline?: boolean;
 };
 
-type CustomElement = {
-  type: string;
-  align?: string;
+type ParagraphElement = {
+  type: "paragraph";
+  align?: "left" | "center" | "right";
   children: CustomText[];
 };
+
+type CustomElement = ParagraphElement;
 
 declare module "slate" {
   interface CustomTypes {
@@ -63,17 +65,35 @@ const SlateElement = ({
   const textAlign =
     (element.align as React.CSSProperties["textAlign"]) || "left";
   return (
-    <div {...attributes} className={`text-${textAlign}`}>
+    <div {...attributes} className={getAlignClass(textAlign)}>
       {children}
     </div>
   );
 };
 
 const SlatePlaceholder = ({ attributes, children }: RenderPlaceholderProps) => {
-  attributes.style.top = "16px";
-  console.log(attributes.style);
+  return (
+    <div
+      {...attributes}
+      style={{
+        ...(attributes.style || {}),
+        top: "16px",
+      }}
+    >
+      {children}
+    </div>
+  );
+};
 
-  return <div {...attributes}>{children}</div>;
+const getAlignClass = (align: string | undefined) => {
+  switch (align) {
+    case "center":
+      return "text-center";
+    case "right":
+      return "text-right";
+    default:
+      return "text-left";
+  }
 };
 
 const TextEditor = () => {

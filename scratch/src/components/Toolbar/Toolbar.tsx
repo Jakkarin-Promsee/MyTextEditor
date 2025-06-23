@@ -1,6 +1,15 @@
 import React from "react";
 import ToolbarButton from "./ToolbarButton";
 import SlateButton from "./SlateButton";
+import { useSlate } from "slate-react";
+import {
+  isMarkActive,
+  toggleMark,
+  isBlockActive,
+  toggleBlock,
+  toggleAlign,
+  isAlign,
+} from "../../utils/editorUtils";
 
 type Props = {
   fontSize: string;
@@ -16,22 +25,79 @@ type Props = {
   onTextAlignChange: (align: string) => void;
 };
 
-const Toolbar = () => (
-  <>
-    {/* For Text Format */}
-    <div className="flex items-center justify-start gap-2">
-      <SlateButton format="bold" tooltip="Bold">
-        <b>B</b>
-      </SlateButton>
-      <SlateButton format="italic" tooltip="Italic">
-        <i>I</i>
-      </SlateButton>
-      <SlateButton format="underline" tooltip="Underline">
-        <u>U</u>
-      </SlateButton>
-    </div>
-  </>
-);
+const Toolbar = () => {
+  const editor = useSlate();
+
+  return (
+    <>
+      {/* For Text Format */}
+      <div className="flex items-center justify-start gap-2">
+        <SlateButton
+          onToggle={toggleMark}
+          checkActive={isMarkActive}
+          format="bold"
+          tooltip="Bold"
+        >
+          <b>B</b>
+        </SlateButton>
+        <SlateButton
+          onToggle={toggleMark}
+          checkActive={isMarkActive}
+          format="italic"
+          tooltip="Italic"
+        >
+          <i>I</i>
+        </SlateButton>
+        <SlateButton
+          onToggle={toggleMark}
+          checkActive={isMarkActive}
+          format="underline"
+          tooltip="Underline"
+        >
+          <u>U</u>
+        </SlateButton>
+      </div>
+
+      <div className="flex items-center justify-start gap-2">
+        <SlateButton
+          onToggle={toggleAlign}
+          checkActive={isAlign}
+          format="left"
+          tooltip="Align Left"
+        >
+          <p>Left</p>
+        </SlateButton>
+
+        <SlateButton
+          onToggle={toggleAlign}
+          checkActive={isAlign}
+          format="center"
+          tooltip="Align Center"
+        >
+          <p>Center</p>
+        </SlateButton>
+
+        <SlateButton
+          onToggle={toggleAlign}
+          checkActive={isAlign}
+          format="right"
+          tooltip="Align Right"
+        >
+          <p>Right</p>
+        </SlateButton>
+
+        <SlateButton
+          onToggle={toggleAlign}
+          checkActive={isAlign}
+          format="justify"
+          tooltip="Align Justify"
+        >
+          <p>Justify</p>
+        </SlateButton>
+      </div>
+    </>
+  );
+};
 
 const oldToolbar = ({
   fontSize,
@@ -42,29 +108,31 @@ const oldToolbar = ({
   onTextAlignChange,
 }: Props) => (
   <>
-    <ToolbarButton
-      onClick={() => onTextAlignChange("left")}
-      isActive={textAlign === "left"}
-      tooltip="Align Left"
-    >
-      <p>Left</p>
-    </ToolbarButton>
+    <div className="flex items-center justify-start gap-2">
+      <ToolbarButton
+        onClick={() => onTextAlignChange("left")}
+        isActive={textAlign === "left"}
+        tooltip="Align Left"
+      >
+        <p>Left</p>
+      </ToolbarButton>
 
-    <ToolbarButton
-      onClick={() => onTextAlignChange("center")}
-      isActive={textAlign === "center"}
-      tooltip="Align center"
-    >
-      <p>Center</p>
-    </ToolbarButton>
+      <ToolbarButton
+        onClick={() => onTextAlignChange("center")}
+        isActive={textAlign === "center"}
+        tooltip="Align center"
+      >
+        <p>Center</p>
+      </ToolbarButton>
 
-    <ToolbarButton
-      onClick={() => onTextAlignChange("right")}
-      isActive={textAlign === "right"}
-      tooltip="Align right"
-    >
-      <p>Right</p>
-    </ToolbarButton>
+      <ToolbarButton
+        onClick={() => onTextAlignChange("right")}
+        isActive={textAlign === "right"}
+        tooltip="Align right"
+      >
+        <p>Right</p>
+      </ToolbarButton>
+    </div>
   </>
 );
 

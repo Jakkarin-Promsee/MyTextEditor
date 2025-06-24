@@ -14,6 +14,30 @@ export const toggleMark = (editor: Editor, format: string) => {
   }
 };
 
+export const isFontSizeActive = (editor: Editor, fontSize: string) => {
+  const [match] = Editor.nodes(editor, {
+    match: (n) =>
+      SlateElement.isElement(n) &&
+      Editor.isBlock(editor, n) &&
+      typeof n.align === "string",
+  });
+
+  return match ? (match[0] as any).fontSize === fontSize : false;
+};
+
+export const toggleFontSize = (editor: Editor, fontSize: string) => {
+  Transforms.setNodes(
+    editor,
+    { fontSize },
+    {
+      match: (n) => {
+        // Type guard to ensure n is a CustomElement
+        return SlateElement.isElement(n) && Editor.isBlock(editor, n);
+      },
+    }
+  );
+};
+
 export const isAlign = (editor: Editor, align: string) => {
   const [match] = Editor.nodes(editor, {
     match: (n) =>

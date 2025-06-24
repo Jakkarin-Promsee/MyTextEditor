@@ -1,14 +1,11 @@
-import React from "react";
-import ToolbarButton from "./ToolbarButton";
 import SlateButton from "./SlateButton";
-import { useSlate } from "slate-react";
 import {
   isMarkActive,
   toggleMark,
+  isFontSizeActive,
+  toggleFontSize,
   isAlign,
   toggleAlign,
-  isBlockActive,
-  toggleBlock,
 } from "../../utils/editorUtils";
 import {
   AlignCenter,
@@ -19,20 +16,6 @@ import {
   Type,
   Underline,
 } from "lucide-react";
-
-type Props = {
-  fontSize: string;
-  textFormats: {
-    bold: boolean;
-    italic: boolean;
-    underline: boolean;
-  };
-  textAlign: string;
-
-  onSizeChange: (size: string) => void;
-  onTextFormatChange: (format: string) => void;
-  onTextAlignChange: (align: string) => void;
-};
 
 const Toolbar = () => {
   return (
@@ -47,7 +30,7 @@ const Toolbar = () => {
               format="bold"
               tooltip="Bold (Ctrl+B)"
             >
-              <Bold size={18} className="w-4 h-4" />
+              <Bold className="w-4 h-4" />
             </SlateButton>
             <SlateButton
               onToggle={toggleMark}
@@ -55,7 +38,7 @@ const Toolbar = () => {
               format="italic"
               tooltip="Italic (Ctrl+I)"
             >
-              <Italic size={18} className="w-4 h-4" />
+              <Italic className="w-4 h-4" />
             </SlateButton>
             <SlateButton
               onToggle={toggleMark}
@@ -63,12 +46,35 @@ const Toolbar = () => {
               format="underline"
               tooltip="Underline (Ctrl+U)"
             >
-              <Underline size={18} className="w-4 h-4" />
+              <Underline className="w-4 h-4" />
             </SlateButton>
           </div>
 
           <div className="flex items-center gap-2 p-1 bg-white rounded-lg border border-gray-200">
-            <Type className="w-4 h-4 m-2" />
+            <SlateButton
+              onToggle={toggleFontSize}
+              checkActive={isFontSizeActive}
+              format="small"
+              tooltip="Small Font Size (Ctrl+Shift+S)"
+            >
+              <Type className="w-2 h-2" />
+            </SlateButton>
+            <SlateButton
+              onToggle={toggleFontSize}
+              checkActive={isFontSizeActive}
+              format="medium"
+              tooltip="Medium Font Size (Ctrl+Shift+M)"
+            >
+              <Type className="w-3 h-3" />
+            </SlateButton>
+            <SlateButton
+              onToggle={toggleFontSize}
+              checkActive={isFontSizeActive}
+              format="large"
+              tooltip="Large Font Size (Ctrl+Shift+L)"
+            >
+              <Type className="w-4 h-4" />
+            </SlateButton>
           </div>
 
           {/* For Text Align */}
@@ -79,7 +85,7 @@ const Toolbar = () => {
               format="left"
               tooltip="Align Left (Ctrl+Shift+L)"
             >
-              <AlignLeft size={18} className="w-4 h-4" />
+              <AlignLeft className="w-4 h-4" />
             </SlateButton>
 
             <SlateButton
@@ -88,7 +94,7 @@ const Toolbar = () => {
               format="center"
               tooltip="Align Center (Ctrl+Shift+C)"
             >
-              <AlignCenter size={18} className="w-4 h-4" />
+              <AlignCenter className="w-4 h-4" />
             </SlateButton>
 
             <SlateButton
@@ -97,7 +103,7 @@ const Toolbar = () => {
               format="right"
               tooltip="Align Right (Ctrl+Shift+R)"
             >
-              <AlignRight size={18} className="w-4 h-4" />
+              <AlignRight className="w-4 h-4" />
             </SlateButton>
           </div>
         </div>

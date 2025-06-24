@@ -12,8 +12,6 @@ import {
 } from "slate-react";
 import Toolbar from "./Toolbar/Toolbar";
 
-type Props = {};
-
 type CustomText = BaseText & {
   text: string;
   bold?: boolean;
@@ -22,8 +20,9 @@ type CustomText = BaseText & {
 };
 
 type ParagraphElement = {
-  type: "paragraph";
-  align?: "left" | "center" | "right";
+  type: "paragraph" | string;
+  align?: "left" | "center" | "right " | string;
+  fontSize?: string;
   children: CustomText[];
 };
 
@@ -41,6 +40,7 @@ const initialValue: Descendant[] = [
   {
     type: "paragraph",
     align: "left",
+    fontSize: "small",
     children: [
       {
         text: "",
@@ -62,10 +62,13 @@ const SlateElement = ({
   children,
   element,
 }: RenderElementProps) => {
-  const textAlign =
-    (element.align as React.CSSProperties["textAlign"]) || "left";
+  const textAlign = element.align || "left";
+  const fontSize = element.fontSize || "small";
   return (
-    <div {...attributes} className={getAlignClass(textAlign)}>
+    <div
+      {...attributes}
+      className={`${getAlignClass(textAlign)} ${getFontSizeClass(fontSize)}`}
+    >
       {children}
     </div>
   );
@@ -94,6 +97,19 @@ const getAlignClass = (align: string | undefined) => {
       return "text-right";
     default:
       return "text-left";
+  }
+};
+
+const getFontSizeClass = (fontSize: string | undefined) => {
+  switch (fontSize) {
+    case "small":
+      return "text-base";
+    case "medium":
+      return "text-xl";
+    case "large":
+      return "text-2xl";
+    default:
+      return "text-base";
   }
 };
 

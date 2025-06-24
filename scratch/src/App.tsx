@@ -1,8 +1,8 @@
 import "./App.css";
 import React, { useState } from "react";
 import { ThemeProvider } from "./context/ThemeContext";
-import { Navbar } from "./components/Navbar";
-import { Footer } from "./components/Footer";
+import { Navbar } from "./components/Page/Navbar";
+import { Footer } from "./components/Page/Footer";
 import TextEditor from "./components/TextEditor";
 
 function App() {

@@ -1,4 +1,12 @@
 import { Editor, Transforms, Element as SlateElement } from "slate";
+import {
+  FONT_SIZES,
+  TEXT_ALIGNMENTS,
+  ELEMENT_TYPES,
+  type FontSize,
+  type TextAlignment,
+  type ElementType,
+} from "../constants/textEditor";
 
 export const isMarkActive = (editor: Editor, format: string) => {
   const marks = Editor.marks(editor) as Record<string, unknown> | null;
@@ -25,10 +33,15 @@ export const isFontSizeActive = (editor: Editor, fontSize: string) => {
   return match ? (match[0] as any).fontSize === fontSize : false;
 };
 
+export function convertFontsize(value: string): FontSize | undefined {
+  const values = Object.values(FONT_SIZES);
+  return values.includes(value as FontSize) ? (value as FontSize) : undefined;
+}
+
 export const toggleFontSize = (editor: Editor, fontSize: string) => {
   Transforms.setNodes(
     editor,
-    { fontSize },
+    { fontSize: convertFontsize(fontSize) },
     {
       match: (n) => {
         // Type guard to ensure n is a CustomElement
@@ -48,10 +61,17 @@ export const isAlign = (editor: Editor, align: string) => {
   return match ? (match[0] as any).align === align : false;
 };
 
+export function convertTextAlign(value: string): TextAlignment | undefined {
+  const values = Object.values(TEXT_ALIGNMENTS);
+  return values.includes(value as TextAlignment)
+    ? (value as TextAlignment)
+    : undefined;
+}
+
 export const toggleAlign = (editor: Editor, align: string) => {
   Transforms.setNodes(
     editor,
-    { align },
+    { align: convertTextAlign(align) },
     {
       match: (n) => {
         // Type guard to ensure n is a CustomElement
@@ -69,13 +89,17 @@ export const isBlockActive = (editor: Editor, format: string) => {
   return !!match;
 };
 
-export const toggleBlock = (editor: Editor, format: string) => {
-  const isActive = isBlockActive(editor, format);
-  const newType = isActive ? "paragraph" : format;
+export function convertElementType(value: string): ElementType | undefined {
+  const values = Object.values(ELEMENT_TYPES);
+  return values.includes(value as ElementType)
+    ? (value as ElementType)
+    : undefined;
+}
 
+export const toggleBlock = (editor: Editor, type: string) => {
   Transforms.setNodes(
     editor,
-    { type: newType },
+    { type: convertElementType(type) },
     {
       match: (n) => {
         // Type guard to ensure n is a CustomElement

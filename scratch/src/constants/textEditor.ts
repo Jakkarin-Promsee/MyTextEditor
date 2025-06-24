@@ -16,5 +16,5 @@ export const ELEMENT_TYPES = {
 
 export type FontSize = (typeof FONT_SIZES)[keyof typeof FONT_SIZES];
 export type TextAlignment =
-  (typeof TEXT_ALIGNMENTS)[keyof typeof TEXT_ALIGNMENTS];
+  | (typeof TEXT_ALIGNMENTS)[keyof typeof TEXT_ALIGNMENTS];
 export type ElementType = (typeof ELEMENT_TYPES)[keyof typeof ELEMENT_TYPES];

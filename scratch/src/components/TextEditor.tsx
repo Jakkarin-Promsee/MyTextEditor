@@ -79,6 +79,7 @@ const SlatePlaceholder = ({ attributes, children }: RenderPlaceholderProps) => {
         ...(attributes.style || {}),
         top: "16px",
       }}
+      className="min-h-[200px]"
     >
       {children}
     </div>

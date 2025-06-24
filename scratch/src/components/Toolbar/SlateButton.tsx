@@ -7,6 +7,7 @@ type Props = {
   checkActive: (editor: Editor, format: string) => boolean;
   format: string;
   children: React.ReactNode;
+  disabled?: boolean;
   tooltip?: string;
 };
 
@@ -15,7 +16,7 @@ const SlateButton = ({
   checkActive,
   format,
   children,
-  tooltip,
+  tooltip = "",
 }: Props) => {
   const editor = useSlate();
   const isActive = checkActive(editor, format);
@@ -27,7 +28,16 @@ const SlateButton = ({
         onToggle(editor, format);
       }}
       title={tooltip}
-      className={isActive ? "text-gray-100 " : "text-gray-700"}
+      className={`
+      p-2 rounded-lg border text-sm font-medium transition-all duration-200
+      ${
+        isActive
+          ? "bg-blue-100 border-blue-300 text-blue-700"
+          : "bg-white border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-gray-300"
+      }
+      ${isActive ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}
+      focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1
+    `}
     >
       {children}
     </button>

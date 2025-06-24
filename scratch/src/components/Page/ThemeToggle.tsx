@@ -10,7 +10,7 @@ export function ThemeToggle() {
       <ToggleButton
         checked={theme === "dark"}
         onToggle={toggleTheme}
-        iconOn={<MoonIcon className="w-3 h-3 text-black" />}
+        iconOn={<MoonIcon className="w-3 h-3 text-white" />}
         iconOff={<SunIcon className="w-3 h-3 text-yellow-500" />}
       />
       {/* <span className="text-sm text-gray-700 dark:text-gray-300">

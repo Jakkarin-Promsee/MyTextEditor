@@ -11,8 +11,7 @@ function App() {
     <>
       <ThemeProvider>
         <Navbar></Navbar>
-        <div className="h-52 min-h-screen px-6 py-4">
-          <h1>Hello world</h1>
+        <div className="min-h-screen px-6 py-4">
           <TextEditor></TextEditor>
         </div>
 

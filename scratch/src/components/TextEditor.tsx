@@ -127,15 +127,17 @@ const TextEditor = () => {
   return (
     <>
       <Slate editor={editor} initialValue={content} onChange={setContent}>
-        <SlateToolbar isPreview={isPreview} setIsPreview={setIsPreview} />
-        <Editable
-          readOnly={isPreview}
-          placeholder="Type something..."
-          renderPlaceholder={SlatePlaceholder}
-          renderElement={SlateElement}
-          renderLeaf={SlateLeaf}
-          className="border p-4 min-h-[200px] rounded relative"
-        />
+        <div>
+          <SlateToolbar isPreview={isPreview} setIsPreview={setIsPreview} />
+          <Editable
+            readOnly={isPreview}
+            placeholder="Type something..."
+            renderPlaceholder={SlatePlaceholder}
+            renderElement={SlateElement}
+            renderLeaf={SlateLeaf}
+            className="border p-4 min-h-[200px] rounded relative"
+          />
+        </div>
       </Slate>
     </>
   );

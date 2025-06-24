@@ -13,7 +13,6 @@ import {
   AlignRight,
   Bold,
   Eye,
-  EyeOff,
   Italic,
   Pencil,
   Type,
@@ -29,17 +28,17 @@ type Props = {
 const SlateToolbar = ({ isPreview, setIsPreview }: Props) => {
   return (
     <>
-      <div className="flex items-center justify-between px-2 py-3 border rounded-lg border-gray-200 bg-gray-50">
+      <div className="flex items-center justify-between px-2 py-2 border rounded-lg border-gray-200 dark:border-gray-700 bg-gray-50  dark:bg-gray-900 text-gray-900 dark:text-gray-50 shadow-sm">
         <div className="flex flex-wrap items-center gap-3">
           {/* For Text Format */}
-          <div className="flex items-center gap-1 p-1 bg-white rounded-lg border border-gray-200">
+          <div className="flex items-center gap-1 p-1  rounded-lg border border-gray-200 dark:border-gray-700 ">
             <SlateButton
               onToggle={toggleMark}
               checkActive={isMarkActive}
               format="bold"
               tooltip="Bold (Ctrl+B)"
             >
-              <Bold className="w-4 h-4" />
+              <Bold className="w-4 h-4 text-gray-700 dark:text-gray-200" />
             </SlateButton>
             <SlateButton
               onToggle={toggleMark}
@@ -47,7 +46,7 @@ const SlateToolbar = ({ isPreview, setIsPreview }: Props) => {
               format="italic"
               tooltip="Italic (Ctrl+I)"
             >
-              <Italic className="w-4 h-4" />
+              <Italic className="w-4 h-4 text-gray-700 dark:text-gray-200" />
             </SlateButton>
             <SlateButton
               onToggle={toggleMark}
@@ -55,18 +54,18 @@ const SlateToolbar = ({ isPreview, setIsPreview }: Props) => {
               format="underline"
               tooltip="Underline (Ctrl+U)"
             >
-              <Underline className="w-4 h-4" />
+              <Underline className="w-4 h-4 text-gray-700 dark:text-gray-200" />
             </SlateButton>
           </div>
 
-          <div className="flex items-center gap-2 p-1 bg-white rounded-lg border border-gray-200">
+          <div className="flex items-center gap-2 p-1 rounded-lg border border-gray-200 dark:border-gray-700">
             <SlateButton
               onToggle={toggleFontSize}
               checkActive={isFontSizeActive}
               format="small"
               tooltip="Small Font Size (Ctrl+Shift+S)"
             >
-              <Type className="w-2 h-2" />
+              <Type className="w-2 h-2 text-gray-700 dark:text-gray-200" />
             </SlateButton>
             <SlateButton
               onToggle={toggleFontSize}
@@ -74,7 +73,7 @@ const SlateToolbar = ({ isPreview, setIsPreview }: Props) => {
               format="medium"
               tooltip="Medium Font Size (Ctrl+Shift+M)"
             >
-              <Type className="w-3 h-3" />
+              <Type className="w-3 h-3 text-gray-700 dark:text-gray-200" />
             </SlateButton>
             <SlateButton
               onToggle={toggleFontSize}
@@ -82,19 +81,19 @@ const SlateToolbar = ({ isPreview, setIsPreview }: Props) => {
               format="large"
               tooltip="Large Font Size (Ctrl+Shift+L)"
             >
-              <Type className="w-4 h-4" />
+              <Type className="w-4 h-4 text-gray-700 dark:text-gray-200" />
             </SlateButton>
           </div>
 
           {/* For Text Align */}
-          <div className="flex items-center gap-1 p-1 bg-white rounded-lg border border-gray-200">
+          <div className="flex items-center gap-1 p-1 rounded-lg border border-gray-200 dark:border-gray-700">
             <SlateButton
               onToggle={toggleAlign}
               checkActive={isAlign}
               format="left"
               tooltip="Align Left (Ctrl+Shift+L)"
             >
-              <AlignLeft className="w-4 h-4" />
+              <AlignLeft className="w-4 h-4 text-gray-700 dark:text-gray-200" />
             </SlateButton>
 
             <SlateButton
@@ -103,7 +102,7 @@ const SlateToolbar = ({ isPreview, setIsPreview }: Props) => {
               format="center"
               tooltip="Align Center (Ctrl+Shift+C)"
             >
-              <AlignCenter className="w-4 h-4" />
+              <AlignCenter className="w-4 h-4 text-gray-700 dark:text-gray-200" />
             </SlateButton>
 
             <SlateButton
@@ -112,7 +111,7 @@ const SlateToolbar = ({ isPreview, setIsPreview }: Props) => {
               format="right"
               tooltip="Align Right (Ctrl+Shift+R)"
             >
-              <AlignRight className="w-4 h-4" />
+              <AlignRight className="w-4 h-4 text-gray-700 dark:text-gray-200" />
             </SlateButton>
           </div>
         </div>
@@ -120,7 +119,7 @@ const SlateToolbar = ({ isPreview, setIsPreview }: Props) => {
         <PreviewButton
           checked={isPreview}
           onToggle={() => setIsPreview(!isPreview)}
-          iconOn={<Pencil className="w-3 h-3" />}
+          iconOn={<Pencil className="w-3 h-3 " />}
           iconOff={<Eye className="w-3 h-3" />}
         ></PreviewButton>
       </div>

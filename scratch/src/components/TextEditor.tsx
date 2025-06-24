@@ -64,6 +64,8 @@ const SlateElement = ({
 }: RenderElementProps) => {
   const textAlign = element.align || "left";
   const fontSize = element.fontSize || "small";
+  if (fontSize === "large") children = <strong>{children}</strong>;
+
   return (
     <div
       {...attributes}

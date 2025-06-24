@@ -1,5 +1,5 @@
 import { useTheme } from "../../hooks/useTheme";
-import ToggleButton from "./ToggleButton";
+import ToggleButton from "../ui/ToggleButton";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 
 export function ThemeToggle() {

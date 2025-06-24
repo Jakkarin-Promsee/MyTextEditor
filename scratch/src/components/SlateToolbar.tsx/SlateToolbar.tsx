@@ -12,15 +12,24 @@ import {
   AlignLeft,
   AlignRight,
   Bold,
+  Eye,
+  EyeOff,
   Italic,
+  Pencil,
   Type,
   Underline,
 } from "lucide-react";
+import PreviewButton from "./PreviewToggle";
 
-const Toolbar = () => {
+type Props = {
+  isPreview: boolean;
+  setIsPreview: (value: boolean) => void;
+};
+
+const SlateToolbar = ({ isPreview, setIsPreview }: Props) => {
   return (
     <>
-      <div className="px-0 py-4 border-b border-gray-200 bg-gray-50">
+      <div className="flex items-center justify-between px-2 py-3 border rounded-lg border-gray-200 bg-gray-50">
         <div className="flex flex-wrap items-center gap-3">
           {/* For Text Format */}
           <div className="flex items-center gap-1 p-1 bg-white rounded-lg border border-gray-200">
@@ -107,9 +116,16 @@ const Toolbar = () => {
             </SlateButton>
           </div>
         </div>
+
+        <PreviewButton
+          checked={isPreview}
+          onToggle={() => setIsPreview(!isPreview)}
+          iconOn={<Pencil className="w-3 h-3" />}
+          iconOff={<Eye className="w-3 h-3" />}
+        ></PreviewButton>
       </div>
     </>
   );
 };
 
-export default Toolbar;
+export default SlateToolbar;

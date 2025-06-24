@@ -10,7 +10,7 @@ import {
   type RenderLeafProps,
   type RenderPlaceholderProps,
 } from "slate-react";
-import Toolbar from "./Toolbar/Toolbar";
+import SlateToolbar from "./SlateToolbar.tsx/SlateToolbar";
 
 type CustomText = BaseText & {
   text: string;
@@ -127,10 +127,7 @@ const TextEditor = () => {
   return (
     <>
       <Slate editor={editor} initialValue={content} onChange={setContent}>
-        <button onClick={() => setIsPreview(!isPreview)}>
-          {isPreview ? "Edit" : "Preview"}
-        </button>
-        <Toolbar />
+        <SlateToolbar isPreview={isPreview} setIsPreview={setIsPreview} />
         <Editable
           readOnly={isPreview}
           placeholder="Type something..."

@@ -3,10 +3,10 @@ import { createEditor } from "slate";
 import type { Descendant } from "slate";
 import { Editable, Slate, withReact } from "slate-react";
 import {
-  SlateElement,
-  SlateLeaf,
-  SlatePlaceholder,
-} from "./TextEditorRender.tsx";
+  CustomElement,
+  CustomLeaf,
+  CustomPlaceHolder,
+} from "./TextEditorRender";
 import SlateToolbar from "./SlateToolbar.tsx/SlateToolbar";
 
 export const initialValue: Descendant[] = [
@@ -39,9 +39,9 @@ const TextEditor = () => {
           <Editable
             readOnly={isPreview}
             placeholder="Type something..."
-            renderPlaceholder={SlatePlaceholder}
-            renderElement={SlateElement}
-            renderLeaf={SlateLeaf}
+            renderPlaceholder={CustomPlaceHolder}
+            renderElement={CustomElement}
+            renderLeaf={CustomLeaf}
             className="border p-4 min-h-[200px] rounded relative"
           />
         </div>

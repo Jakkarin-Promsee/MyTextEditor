@@ -6,7 +6,7 @@ import {
   toggleFontSize,
   isAlign,
   toggleAlign,
-} from "../../utils/editorUtils";
+} from "../../../utils/editorUtils";
 import {
   AlignCenter,
   AlignLeft,

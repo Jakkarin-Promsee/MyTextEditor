@@ -3,9 +3,9 @@ import {
   type RenderLeafProps,
   type RenderPlaceholderProps,
 } from "slate-react";
-import { type CustomText } from "../types/textEditor.ts";
+import { type CustomText } from "../../types/textEditor.ts";
 
-export const SlateLeaf = ({ attributes, children, leaf }: RenderLeafProps) => {
+export const CustomLeaf = ({ attributes, children, leaf }: RenderLeafProps) => {
   const customLeaf = leaf as CustomText;
   if (customLeaf.bold) children = <strong>{children}</strong>;
   if (customLeaf.italic) children = <em>{children}</em>;
@@ -13,7 +13,7 @@ export const SlateLeaf = ({ attributes, children, leaf }: RenderLeafProps) => {
   return <span {...attributes}>{children}</span>;
 };
 
-export const SlateElement = ({
+export const CustomElement = ({
   attributes,
   children,
   element,
@@ -25,14 +25,16 @@ export const SlateElement = ({
   return (
     <div
       {...attributes}
-      className={`${getAlignClass(textAlign)} ${getFontSizeClass(fontSize)}`}
+      className={`${mapTextAlignToTailwindClass(
+        textAlign
+      )} ${mapFontSizeToTailwindClass(fontSize)}`}
     >
       {children}
     </div>
   );
 };
 
-export const SlatePlaceholder = ({
+export const CustomPlaceHolder = ({
   attributes,
   children,
 }: RenderPlaceholderProps) => {
@@ -50,8 +52,8 @@ export const SlatePlaceholder = ({
   );
 };
 
-export const getAlignClass = (align: string | undefined) => {
-  switch (align) {
+export const mapTextAlignToTailwindClass = (textAlign: string | undefined) => {
+  switch (textAlign) {
     case "center":
       return "text-center";
     case "right":
@@ -61,7 +63,7 @@ export const getAlignClass = (align: string | undefined) => {
   }
 };
 
-export const getFontSizeClass = (fontSize: string | undefined) => {
+export const mapFontSizeToTailwindClass = (fontSize: string | undefined) => {
   switch (fontSize) {
     case "small":
       return "text-base";

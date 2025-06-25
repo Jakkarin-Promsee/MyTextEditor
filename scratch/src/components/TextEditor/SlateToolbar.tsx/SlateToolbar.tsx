@@ -31,7 +31,7 @@ const SlateToolbar = ({ isPreview, setIsPreview }: Props) => {
       <div className="flex items-center justify-between px-2 py-2 border rounded-lg border-gray-200 dark:border-gray-700 bg-gray-50  dark:bg-gray-900 text-gray-900 dark:text-gray-50 shadow-sm">
         <div className="flex flex-wrap items-center gap-3">
           {/* For Text Format */}
-          <div className="flex items-center gap-1 p-1  rounded-lg border border-gray-200 dark:border-gray-700 ">
+          <div className="flex items-center gap-1 p-1  rounded-lg border border-gray-200 dark:border-gray-700 duration-1000 ">
             <SlateButton
               onToggle={toggleMark}
               checkActive={isMarkActive}

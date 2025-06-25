@@ -3,6 +3,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
+  * {
+    @apply transition-all duration-300 ease-in-out;
+  }
   body {
     @apply bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100;
   }

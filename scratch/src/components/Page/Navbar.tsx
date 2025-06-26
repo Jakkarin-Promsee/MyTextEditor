@@ -1,9 +1,11 @@
 import { ThemeToggle } from "./ThemeToggle";
 
-export const Navbar = () => {
+type Props = { className?: string };
+
+export const Navbar = ({ className = "" }: Props) => {
   return (
-    <nav className="w-full px-6 py-4 shadow-md sticky top-0 z-50 bg-white dark:bg-gray-900 dark:text-white">
-      <div className="max-w-screen-xl mx-auto flex justify-between items-center">
+    <nav className={`bg-white dark:bg-gray-900 shadow-md py-4 ${className}`}>
+      <div className="min-w-full mx-auto px-3 flex justify-between items-center">
         <h1 className="text-xl font-bold text-primary-light dark:text-primary-dark">
           Medium Editor
         </h1>

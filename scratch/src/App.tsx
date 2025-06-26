@@ -8,17 +8,15 @@ function App() {
   //   const renderCount = useRef(0);
   return (
     <>
-      <div className="min-h-screen flex flex-col">
-        <ThemeProvider>
-          <Navbar></Navbar>
-
-          <main className="flex-1 px-6 py-8">
+      <ThemeProvider>
+        <Navbar></Navbar>
+        <main className=" flex flex-col">
+          <div className="min-h-[10000px] flex-1 px-6 py-8">
             <TextEditor></TextEditor>
-          </main>
-
+          </div>
           <Footer></Footer>
-        </ThemeProvider>
-      </div>
+        </main>
+      </ThemeProvider>
     </>
   );
 }

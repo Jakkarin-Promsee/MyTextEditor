@@ -6,8 +6,48 @@
   * {
     @apply transition-all duration-300 ease-in-out;
   }
+
   body {
     @apply bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100;
+  }
+
+  /* Custom Page Component */
+
+  .root {
+    @apply min-h-full;
+  }
+
+  nav {
+    @apply h-[4rem];
+  }
+
+  main {
+    @apply h-[calc(100vh-4rem)] overflow-y-scroll;
+  }
+
+  footer {
+    @apply h-[4rem];
+  }
+
+  /* Customize Scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-1.5;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply opacity-0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full hover:bg-gray-400;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    @apply opacity-0;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    @apply bg-gray-600 hover:bg-gray-500;
   }
 }
 

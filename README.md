@@ -1,4 +1,4 @@
-# Medium Editor (In progress)
+# My Text Editor [Medium Inspiration] (In progress)
 
 A modern, lightweight rich text editor built with React, TypeScript, and Slate.js. This project represents my first venture into frontend development, combining clean design with powerful text editing capabilities.
 

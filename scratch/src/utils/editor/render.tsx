@@ -3,7 +3,11 @@ import {
   type RenderLeafProps,
   type RenderPlaceholderProps,
 } from "slate-react";
-import { type CustomText } from "../../types/textEditor.ts";
+import { type CustomText } from "../../types/textEditor";
+import {
+  mapTextAlignToTailwindClass,
+  mapFontSizeToTailwindClass,
+} from "../../utils/editor/maps";
 
 export const CustomLeaf = ({ attributes, children, leaf }: RenderLeafProps) => {
   const customLeaf = leaf as CustomText;
@@ -50,28 +54,4 @@ export const CustomPlaceHolder = ({
       {children}
     </div>
   );
-};
-
-export const mapTextAlignToTailwindClass = (textAlign: string | undefined) => {
-  switch (textAlign) {
-    case "center":
-      return "text-center";
-    case "right":
-      return "text-right";
-    default:
-      return "text-left";
-  }
-};
-
-export const mapFontSizeToTailwindClass = (fontSize: string | undefined) => {
-  switch (fontSize) {
-    case "small":
-      return "text-base";
-    case "medium":
-      return "text-xl";
-    case "large":
-      return "text-2xl";
-    default:
-      return "text-base";
-  }
 };

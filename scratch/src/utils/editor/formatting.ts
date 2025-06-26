@@ -6,8 +6,9 @@ import {
   type FontSize,
   type TextAlignment,
   type ElementType,
-} from "../constants/textEditor";
+} from "../../constants/textEditor";
 
+// For Mark Formattin
 export const isMarkActive = (editor: Editor, format: string) => {
   const marks = Editor.marks(editor) as Record<string, unknown> | null;
   return marks ? marks[format] === true : false;
@@ -22,6 +23,7 @@ export const toggleMark = (editor: Editor, format: string) => {
   }
 };
 
+// For Font Size Formatting
 export const isFontSizeActive = (editor: Editor, fontSize: string) => {
   const [match] = Editor.nodes(editor, {
     match: (n) =>
@@ -51,6 +53,7 @@ export const toggleFontSize = (editor: Editor, fontSize: string) => {
   );
 };
 
+// For Text Alignment Formatting
 export const isAlign = (editor: Editor, align: string) => {
   const [match] = Editor.nodes(editor, {
     match: (n) =>
@@ -81,6 +84,7 @@ export const toggleAlign = (editor: Editor, align: string) => {
   );
 };
 
+// For Block Formatting
 export const isBlockActive = (editor: Editor, format: string) => {
   const [match] = Editor.nodes(editor, {
     match: (n) =>

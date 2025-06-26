@@ -1,6 +1,6 @@
-# My Text Editor [Medium Inspiration] (In progress)
+# My Text Editor (In progress)
 
-A modern, lightweight rich text editor built with React, TypeScript, and Slate.js. This project represents my first venture into frontend development, combining clean design with powerful text editing capabilities.
+A modern, lightweight rich text editor, inspiration by medium blog website. Built with React, TypeScript, and Slate.js. This project represents my first venture into frontend development, combining clean design with powerful text editing capabilities.
 
 ## 🌟 Features
 

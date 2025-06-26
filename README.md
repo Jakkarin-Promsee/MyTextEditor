@@ -1,4 +1,4 @@
-# Medium Editor
+# Medium Editor (In progress)
 
 A modern, lightweight rich text editor built with React, TypeScript, and Slate.js. This project represents my first venture into frontend development, combining clean design with powerful text editing capabilities.
 
@@ -17,7 +17,7 @@ A modern, lightweight rich text editor built with React, TypeScript, and Slate.j
 - **React 18** - Modern React with hooks and functional components
 - **TypeScript** - Type safety and better developer experience
 - **Slate.js** - Powerful framework for building rich text editors
-- **Tailwind CSS** - Utility-first CSS framework for styling
+- **Tailwind CSS (4.1)** - Utility-first CSS framework for styling
 - **Lucide React** - Beautiful, customizable icons
 - **Vite** - Fast build tool and development server
 

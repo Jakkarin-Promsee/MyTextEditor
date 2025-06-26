@@ -42,7 +42,7 @@ const TextEditor = () => {
             renderPlaceholder={CustomPlaceHolder}
             renderElement={CustomElement}
             renderLeaf={CustomLeaf}
-            className="border p-4 min-h-[200px] rounded relative"
+            className="min-h-[200px] p-4 border rounded relative"
           />
         </div>
       </Slate>

@@ -13,9 +13,6 @@ export function ThemeToggle() {
         iconOn={<MoonIcon className="w-3 h-3 text-white" />}
         iconOff={<SunIcon className="w-3 h-3 text-yellow-500" />}
       />
-      {/* <span className="text-sm text-gray-700 dark:text-gray-300">
-        {theme === "dark" ? "Dark" : "Light"} Mode
-      </span> */}
     </div>
   );
 }

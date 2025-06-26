@@ -3,17 +3,33 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
+  /* Customize Global Atributtes */
   * {
-    @apply transition-all duration-300 ease-in-out;
+    @apply transition-all duration-300;
+  }
+
+  html {
+    @apply scroll-smooth;
   }
 
   body {
     @apply bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100;
   }
 
-  /* Custom Page Component */
+  /* Customize page scale for Scrollbar that start below navbar (4rem height) */
+  @keyframes fadeIn {
+    from {
+      opacity: 0.5;
+      transform: scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 
   .root {
+    animation: fadeIn 100ms ease-in-out both;
     @apply min-h-full;
   }
 
@@ -56,32 +72,37 @@
     @apply text-gray-500 dark:text-gray-400;
   }
 
-  .text-disabled {
-    @apply text-gray-400 dark:text-gray-500;
-  }
-
   .border {
     @apply border-gray-200 dark:border-gray-700;
   }
 
-  .input {
-    @apply bg-white dark:bg-gray-800;
+  /* Customize Slate Toolbar */
+  .toolbar-container {
+    @apply bg-gray-50  dark:bg-gray-900 border-gray-200 dark:border-gray-700  text-gray-900 dark:text-gray-50 rounded-lg border shadow-sm;
+  }
+
+  .toolbar-group {
+    @apply border-gray-200 dark:border-gray-700  rounded-lg border duration-1000;
+  }
+
+  .toolbar-element {
+    @apply text-gray-700 dark:text-gray-200;
   }
 }
 
 @layer utilities {
   @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(-10px);
+    from {
+      opacity: 0.5;
+      transform: scale(0.98);
     }
-    100% {
+    to {
       opacity: 1;
-      transform: translateY(0);
+      transform: scale(1);
     }
   }
 
   .animate-fade-in {
-    animation: fadeIn 0.5s ease-out forwards;
+    animation: fadeIn 10000ms ease-out;
   }
 }

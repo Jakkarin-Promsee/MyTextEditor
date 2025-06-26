@@ -11,7 +11,7 @@ function App() {
       <ThemeProvider>
         <Navbar></Navbar>
         <main className=" flex flex-col">
-          <div className="min-h-[10000px] flex-1 px-6 py-8">
+          <div className="flex-1 px-6 py-8">
             <TextEditor></TextEditor>
           </div>
           <Footer></Footer>

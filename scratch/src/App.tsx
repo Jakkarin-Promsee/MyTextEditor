@@ -1,5 +1,4 @@
 import "./App.css";
-import React, { useState } from "react";
 import { ThemeProvider } from "./context/ThemeContext";
 import { Navbar } from "./components/Page/Navbar";
 import { Footer } from "./components/Page/Footer";
@@ -9,14 +8,17 @@ function App() {
   //   const renderCount = useRef(0);
   return (
     <>
-      <ThemeProvider>
-        <Navbar></Navbar>
-        <div className="min-h-screen px-6 py-4">
-          <TextEditor></TextEditor>
-        </div>
+      <div className="min-h-screen flex flex-col">
+        <ThemeProvider>
+          <Navbar></Navbar>
 
-        <Footer></Footer>
-      </ThemeProvider>
+          <main className="flex-1 px-6 py-8">
+            <TextEditor></TextEditor>
+          </main>
+
+          <Footer></Footer>
+        </ThemeProvider>
+      </div>
     </>
   );
 }

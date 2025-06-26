@@ -12,7 +12,6 @@
 }
 
 @layer components {
-  /* Custom utility classes */
   .text-muted {
     @apply text-gray-500 dark:text-gray-400;
   }
@@ -27,13 +26,6 @@
 
   .input {
     @apply bg-white dark:bg-gray-800;
-  }
-
-  .card {
-    @apply bg-emerald-600 dark:bg-emerald-500
-           text-emerald-600 dark:text-emerald-400
-           hover:bg-emerald-700 dark:hover:bg-emerald-600
-           shadow-md dark:shadow-lg;
   }
 }
 

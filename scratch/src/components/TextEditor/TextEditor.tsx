@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useMemo, useRef } from "react";
 import { createEditor } from "slate";
 import type { Descendant } from "slate";
 import { Editable, Slate, withReact } from "slate-react";
+import { withHistory } from "slate-history";
 import {
   CustomElement,
   CustomLeaf,
@@ -25,7 +26,7 @@ export const initialValue: Descendant[] = [
 
 const TextEditor = () => {
   console.log("TextEditor component rendered");
-  const editor = useMemo(() => withReact(createEditor()), []);
+  const editor = useMemo(() => withHistory(withReact(createEditor())), []);
   const [isPreview, setIsPreview] = React.useState(false);
   const onKeyDown = useCallback(editorShortcuts(editor), [editor]);
 

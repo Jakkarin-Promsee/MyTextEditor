@@ -5,6 +5,16 @@ export const editorShortcuts =
     if (event.ctrlKey || event.metaKey) {
       // Text formatting
       switch (event.key.toLowerCase()) {
+        case "z":
+          event.preventDefault();
+          editor.undo();
+          break;
+
+        case "y":
+          event.preventDefault();
+          editor.redo();
+          break;
+
         case "b":
           event.preventDefault();
           toggleMark(editor, "bold");

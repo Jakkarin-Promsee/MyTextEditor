@@ -48,7 +48,7 @@ A modern, lightweight rich text editor, inspiration by medium blog website. Buil
 3. **Start the development server**
 
    ```bash
-   npm run dev
+   npm run web2
    # or
    yarn dev
    ```

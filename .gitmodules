@@ -1,0 +1,3 @@
+[submodule "ui"]
+	path = ui
+	url = https://github.com/Jakkarin-Promsee/elegant-theme-canvas.git

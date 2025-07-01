@@ -4,7 +4,9 @@ type Props = { className?: string };
 
 export const Navbar = ({ className = "" }: Props) => {
   return (
-    <nav className={`py-4 bg-white dark:bg-gray-900 shadow-md ${className}`}>
+    <nav
+      className={`py-4 bg-white dark:bg-gray-900 shadow-md animation-theme ${className}`}
+    >
       <div className="flex justify-between items-center min-w-full mx-auto px-3 ">
         <h1 className="text-xl font-bold">Medium Editor</h1>
 

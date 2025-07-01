@@ -28,7 +28,7 @@ type Props = {
 const SlateToolbar = ({ isPreview, setIsPreview }: Props) => {
   return (
     <>
-      <div className="toolbar-container flex items-center justify-between px-2 py-2 mb-2">
+      <div className="toolbar-container flex items-center justify-between px-2 py-2 mb-2 animation-theme">
         <div className="flex flex-wrap gap-3 items-center ">
           {/* For Text Format */}
           <div className="toolbar-group flex gap-1 items-center p-1">

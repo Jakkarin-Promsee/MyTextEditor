@@ -55,7 +55,7 @@ A modern, lightweight rich text editor, inspiration by medium blog website. Buil
 
 4. **Open your browser**
 
-   Navigate to `http://localhost:5173` to see the application running.
+   Navigate to `http://localhost:8080` to see the application running.
 
 ## 📁 Project Structure
 

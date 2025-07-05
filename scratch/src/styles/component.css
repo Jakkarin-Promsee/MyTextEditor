@@ -1,0 +1,22 @@
+@layer components {
+  .text-muted {
+    @apply text-gray-500 dark:text-gray-400;
+  }
+
+  .border {
+    @apply border-gray-200 dark:border-gray-700;
+  }
+
+  /* Customize Slate Toolbar */
+  .toolbar-container {
+    @apply bg-gray-50  dark:bg-gray-900 border-gray-200 dark:border-gray-700  text-gray-900 dark:text-gray-50 rounded-lg border shadow-sm;
+  }
+
+  .toolbar-group {
+    @apply border-gray-200 dark:border-gray-700  rounded-lg border duration-1000;
+  }
+
+  .toolbar-element {
+    @apply text-gray-700 dark:text-gray-200;
+  }
+}

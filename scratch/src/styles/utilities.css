@@ -1,16 +1,10 @@
 @layer utilities {
-  @keyframes fadeIn {
-    from {
-      opacity: 0.5;
-      transform: scale(0.98);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
+  /* Customize Global Atributtes */
+  .animate-colors {
+    @apply transition-colors duration-[300ms];
   }
 
-  .animate-fade-in {
-    animation: fadeIn 10000ms ease-out;
+  .animate-transform {
+    @apply transition-transform  duration-[300ms];
   }
 }

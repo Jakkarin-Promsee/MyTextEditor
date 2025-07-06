@@ -56,7 +56,7 @@ const TextEditor = () => {
             renderPlaceholder={CustomPlaceHolder}
             renderElement={CustomElement}
             renderLeaf={CustomLeaf}
-            className="min-h-[250px] p-4 border rounded relative"
+            className="toolbar-input min-h-[250px] p-4 border rounded relative animate-colors"
           />
         </div>
       </Slate>

@@ -6,12 +6,12 @@ export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className="flex items-center justify-center gap-3">
+    <div className="flex items-center justify-center gap-3 animate-colors">
       <ToggleButton
         checked={theme === "dark"}
         onToggle={toggleTheme}
-        iconOn={<MoonIcon className="w-3 h-3 text-white" />}
-        iconOff={<SunIcon className="w-3 h-3 text-yellow-500" />}
+        iconOn={<MoonIcon className="theme-toggle-icon w-3 h-3" />}
+        iconOff={<SunIcon className="theme-toggle-icon w-3 h-3" />}
       />
     </div>
   );

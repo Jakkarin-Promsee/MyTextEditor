@@ -5,15 +5,15 @@ type Props = { className?: string };
 export const Navbar = ({ className = "" }: Props) => {
   return (
     <nav
-      className={`py-4 bg-white dark:bg-gray-900 shadow-md animation-theme ${className}`}
+      className={`navbar-container py-4 shadow-md animate-colors ${className}`}
     >
       <div className="flex justify-between items-center min-w-full mx-auto px-3 ">
         <h1 className="text-xl font-bold">Medium Editor</h1>
 
         <ul className="flex gap-6 ">
-          <li className="hover:underline cursor-pointer text-muted">Home</li>
-          <li className="hover:underline cursor-pointer">About</li>
-          <li className="hover:underline cursor-pointer">Contact</li>
+          <li className="navbar-menu text-muted-foreground">Home</li>
+          <li className="navbar-menu">About</li>
+          <li className="navbar-menu">Contact</li>
         </ul>
 
         <ThemeToggle></ThemeToggle>

@@ -1,0 +1,25 @@
+@layer components {
+  .toolbar-container {
+    @apply bg-surface border-border;
+  }
+
+  .toolbar-group {
+    @apply bg-primary border-border;
+  }
+
+  .toolbar-icon {
+    @apply text-primary-foreground;
+  }
+
+  .toolbar-switch-track {
+    @apply bg-switch-track;
+  }
+
+  .toolbar-switch-thumb {
+    @apply bg-switch-thumb border-switch-track;
+  }
+
+  .toolbar-input {
+    @apply bg-surface border-border;
+  }
+}

@@ -1,22 +1,35 @@
+@import "./pages/TextEditor.css";
+
 @layer components {
-  .text-muted {
-    @apply text-gray-500 dark:text-gray-400;
+  .btn-primary {
+    @apply bg-primary border-border text-primary-foreground hover:bg-primary-hover hover:border-border-hover;
   }
 
-  .border {
-    @apply border-gray-200 dark:border-gray-700;
+  .btn-primary-active {
+    @apply bg-primary-active border-border-active;
   }
 
-  /* Customize Slate Toolbar */
-  .toolbar-container {
-    @apply bg-gray-50  dark:bg-gray-900 border-gray-200 dark:border-gray-700  text-gray-900 dark:text-gray-50 rounded-lg border shadow-sm;
+  .navbar-container {
+    @apply bg-surface;
   }
 
-  .toolbar-group {
-    @apply border-gray-200 dark:border-gray-700  rounded-lg border duration-1000;
+  .navbar-menu {
+    @apply hover:underline cursor-pointer;
   }
 
-  .toolbar-element {
-    @apply text-gray-700 dark:text-gray-200;
+  .theme-toggle-icon {
+    @apply text-theme-toggle-icon;
+  }
+
+  .footer-container {
+    @apply bg-secondary text-secondary-foreground;
+  }
+
+  .ui-switch-track {
+    @apply bg-switch-theme-track;
+  }
+
+  .ui-switch-thumb {
+    @apply bg-switch-theme-thumb border-switch-theme-thumb;
   }
 }

@@ -1,3 +1,83 @@
-@theme {
-  --color-midnight: oklchroma(210 40% 96.1%);
+:root {
+  --background: oklch(100% 0.00011 271.152);
+  --surface: oklch(98.5% 0.002 247.839);
+  --foreground: oklch(21% 0.034 264.665);
+
+  --primary: oklch(98.5% 0.002 247.839);
+  --primary-active: oklch(93.2% 0.032 255.585);
+  --primary-hover: oklch(92.8% 0.006 264.531);
+  --primary-foreground: oklch(21% 0.034 264.665);
+
+  --secondary: oklch(92.8% 0.006 264.531);
+  --secondary-foregaround: oklch(21% 0.034 264.665);
+
+  --muted: ;
+  --muted-foreground: oklch(55.1% 0.027 264.364);
+
+  --border: oklch(92.8% 0.006 264.531);
+  --border-hover: oklch(87.2% 0.01 258.338);
+  --border-active: oklch(80.9% 0.105 251.813);
+
+  --switch-track: oklch(87.2% 0.01 258.338);
+  --switch-thumb: oklch(100% 0.00011 271.152);
+
+  --switch-theme-track: oklch(87.2% 0.01 258.338);
+  --switch-theme-thumb: oklch(100% 0.00011 271.152);
+  --theme-toggle-icon: oklch(79.5% 0.184 86.047);
+}
+
+.dark {
+  --background: oklch(13% 0.028 261.692);
+  --surface: oklch(21% 0.034 264.665);
+  --foreground: oklch(96.7% 0.003 264.542);
+
+  --primary: oklch(21% 0.034 264.665);
+  --primary-active: oklch(37.9% 0.146 265.522);
+  --primary-hover: oklch(27.8% 0.033 256.848);
+  --primary-foreground: oklch(98.5% 0.002 247.839);
+
+  --secondary: oklch(27.8% 0.033 256.848);
+  --secondary-foregaround: oklch(87.2% 0.01 258.338);
+
+  --muted: ;
+  --muted-foreground: oklch(70.7% 0.022 261.325);
+
+  --border: oklch(37.3% 0.034 259.733);
+  --border-active: oklch(42.4% 0.199 265.638);
+  --border-hover: oklch(44.6% 0.03 256.802);
+
+  --switch-track: oklch(44.6% 0.03 256.802);
+  --switch-thumb: oklch(13% 0.028 261.692);
+
+  --switch-theme-track: oklch(44.6% 0.03 256.802);
+  --switch-theme-thumb: oklch(13% 0.028 261.692);
+  --theme-toggle-icon: oklch(90.984% 0.04397 295.489);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-active: var(--primary-active);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: ;
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-border: var(--border);
+  --color-border-hover: var(--border-hover);
+  --color-border-active: var(--border-active);
+
+  --color-switch-track: var(--switch-track);
+  --color-switch-thumb: var(--switch-thumb);
+
+  --color-switch-theme-track: var(--switch-theme-track);
+  --color-switch-theme-thumb: var(--switch-theme-thumb);
+  --color-theme-toggle-icon: var(--theme-toggle-icon);
 }

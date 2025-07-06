@@ -1,36 +1,15 @@
 @layer base {
-  /* Customize Global Atributtes */
-
-  .animation-theme {
-    @apply transition-colors  duration-[300ms];
-  }
-
-  .animation-transform {
-    @apply transition-transform duration-[30000ms];
-  }
-
   html {
     @apply scroll-smooth;
   }
 
   body {
-    @apply bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors  duration-[300ms];
+    @apply bg-background text-foreground transition-colors duration-[300ms];
   }
 
   /* Customize page scale for Scrollbar that start below navbar (4rem height) */
-  @keyframes fadeIn {
-    from {
-      opacity: 0.5;
-      transform: scale(0.98);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
   .root {
-    animation: fadeIn 100ms ease-in-out both;
+    /* Root will keep all nav, main, and footer */
     @apply min-h-full;
   }
 

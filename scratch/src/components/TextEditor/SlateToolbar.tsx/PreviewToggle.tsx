@@ -16,10 +16,10 @@ const PreviewButton: React.FC<ToggleButtonProps> = ({
   return (
     <button
       onClick={onToggle}
-      className="flex items-center w-13 h-6 bg-gray-300 dark:bg-gray-600 rounded-xl transition-colors duration-300"
+      className="toolbar-switch-track flex items-center w-13 h-6 rounded-xl animate-colors"
     >
       <div
-        className={`flex items-center justify-center w-8 h-6 bg-white border dark:bg-gray-950 border-gray-200 dark:border-gray-700 rounded-xl shadow-md  transition-transform transform duration-300 ${
+        className={`toolbar-switch-thumb flex items-center justify-center w-8 h-6 rounded-xl border-2 shadow-md animate-transform ${
           checked ? "translate-x-5" : "translate-x-0"
         }`}
       >

@@ -17,7 +17,7 @@ A modern, lightweight rich text editor, inspiration by medium blog website. Buil
 - **React 18** - Modern React with hooks and functional components
 - **TypeScript** - Type safety and better developer experience
 - **Slate.js** - Powerful framework for building rich text editors
-- **Tailwind CSS (4.1)** - Utility-first CSS framework for styling
+- **Tailwind CSS (4.1)** - Utility-first CSS framework for styling with no confic file
 - **Lucide React** - Beautiful, customizable icons
 - **Vite** - Fast build tool and development server
 

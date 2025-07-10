@@ -54,7 +54,6 @@
   --theme-toggle-icon: oklch(90.984% 0.04397 295.489);
 }
 
-
 @theme inline {
   --color-background: var(--background);
   --color-surface: var(--surface);

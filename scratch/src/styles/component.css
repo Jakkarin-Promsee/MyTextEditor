@@ -9,27 +9,7 @@
     @apply bg-primary-active border-border-active;
   }
 
-  .navbar-container {
-    @apply bg-surface;
-  }
-
   .navbar-menu {
     @apply hover:underline cursor-pointer;
-  }
-
-  .theme-toggle-icon {
-    @apply text-theme-toggle-icon;
-  }
-
-  .footer-container {
-    @apply bg-secondary text-secondary-foreground;
-  }
-
-  .ui-switch-track {
-    @apply bg-switch-theme-track;
-  }
-
-  .ui-switch-thumb {
-    @apply bg-switch-theme-thumb border-switch-theme-thumb;
   }
 }

@@ -16,10 +16,10 @@ const ToggleButton: React.FC<ToggleButtonProps> = ({
   return (
     <button
       onClick={onToggle}
-      className="ui-switch-track flex items-center w-12 h-6 px-1 rounded-full animate-colors "
+      className="bg-switch-theme-track flex items-center w-12 h-6 px-1 rounded-full animate-colors "
     >
       <div
-        className={`ui-switch-thumb flex items-center justify-center w-5 h-5 rounded-full shadow-md  animate-transform ${
+        className={`bg-switch-theme-thumb border-switch-theme-thumb flex items-center justify-center w-5 h-5 rounded-full shadow-md  animate-transform ${
           checked ? "translate-x-5" : "translate-x-0"
         }`}
       >

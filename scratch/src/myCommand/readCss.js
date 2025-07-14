@@ -46,7 +46,7 @@ Focus on:
 - Anything that could be improved to follow best practices
 
 ${sendBack ? `After your review, please provide **adjusted or improved code for each file separately** based on your recommendations.
-Send me back the revised version of each file clearly labeled.` : ``}
+Send me back the revised version of each file clearly labeled` : ``}
 
 Here’s the code content:\n\n`;
 

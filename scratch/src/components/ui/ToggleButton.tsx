@@ -20,7 +20,7 @@ const ToggleButton: React.FC<ToggleButtonProps> = ({
     >
       <div
         className={`bg-switch-theme-thumb border-switch-theme-thumb flex items-center justify-center w-5 h-5 rounded-full shadow-md  animate-transform ${
-          checked ? "translate-x-5" : "translate-x-0"
+          checked ? "translate-x-5 " : "translate-x-0 "
         }`}
       >
         {checked ? iconOn : iconOff}

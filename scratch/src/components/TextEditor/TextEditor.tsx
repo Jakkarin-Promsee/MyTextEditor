@@ -56,7 +56,7 @@ const TextEditor = () => {
             renderPlaceholder={CustomPlaceHolder}
             renderElement={CustomElement}
             renderLeaf={CustomLeaf}
-            className="bg-surface border-border min-h-[250px] p-4 border rounded relative animate-colors"
+            className="bg-surface border-border min-h-[275px] p-4 border rounded relative animate-colors"
           />
         </div>
       </Slate>

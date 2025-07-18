@@ -25,14 +25,12 @@ export const initialValue: Descendant[] = [
 ];
 
 const TextEditor = () => {
-  console.log("TextEditor component rendered");
   const editor = useMemo(() => withHistory(withReact(createEditor())), []);
   const [isPreview, setIsPreview] = React.useState(false);
   const onKeyDown = useCallback(editorShortcuts(editor), [editor]);
 
   const content = useRef<Descendant[]>(initialValue);
   const setContent = useCallback((value: Descendant[]) => {
-    console.log("setContent called with value: ", value);
     content.current = value;
   }, []);
 

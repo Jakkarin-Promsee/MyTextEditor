@@ -16,7 +16,7 @@ const ToggleButton: React.FC<ToggleButtonProps> = ({
   return (
     <button
       onClick={onToggle}
-      className="bg-switch-theme-track flex items-center w-12 h-6 px-1 rounded-full animate-colors "
+      className="bg-switch-theme-track flex items-center w-12 h-6 px-2 rounded-full animate-colors "
     >
       <div
         className={`bg-switch-theme-thumb border-switch-theme-thumb flex items-center justify-center w-5 h-5 rounded-full shadow-md  animate-transform ${

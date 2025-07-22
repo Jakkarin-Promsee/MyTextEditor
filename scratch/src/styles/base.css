@@ -4,7 +4,7 @@
   }
 
   body {
-    @apply bg-background text-foreground transition-colors duration-[300ms];
+    @apply bg-background text-foreground transition-colors;
   }
 
   /* Customize page scale for Scrollbar that start below navbar (4rem height) */
